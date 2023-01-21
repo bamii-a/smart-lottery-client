@@ -18,7 +18,10 @@ const LotteryEntrance = (props: Props) => {
   /* A hook that allows you to send notifications to the user. */
   const dispatch = useNotification();
 
-  const { chainId: chainIdHex, isWeb3Enabled } = useMoralis();
+  const {
+    chainId: chainIdHex,
+    isWeb3Enabled,
+  }: { isWeb3Enabled: boolean; chainId: string | null } = useMoralis();
   const addresses: contractAddressesInterface = contractAddresses;
   const chainId: number = parseInt(chainIdHex!);
   const raffleAddress =
